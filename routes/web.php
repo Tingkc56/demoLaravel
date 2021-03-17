@@ -37,3 +37,7 @@ Route::get('clickmoi',[FrontController::class,'clickmoi']);
 
 Route::resource('mimi',MimiController::class);
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
